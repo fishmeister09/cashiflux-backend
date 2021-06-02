@@ -7,11 +7,13 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./src/routes/authRoutes');
 
 const requireAuth = require('./src/middlewares/requireAuth');
+const requestRouter = require('./src/routes/requestRoute');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(requestRouter);
 const port = process.env.PORT || 5000;
 
 const mongoUri = process.env.ATLAS_URI;
