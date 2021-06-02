@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const requestSchema = new Schema(
   {
     username: {type: String, required: true},
-    problem: {type: String, required: true},
-    amount: {type: Number, required: true},
-    img: {data: Buffer, contentType: String},
+    title: {type: String, required: true},
+    description: {type: String, required: true},
+    fundrequired: {type: Number, required: true},
   },
   {
     timestamps: true,
