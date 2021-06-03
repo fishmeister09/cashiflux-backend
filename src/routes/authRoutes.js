@@ -7,9 +7,11 @@ const router = express.Router();
 
 router.route('/userdata').get((req, res) => {
   User.find()
+    .select(['username', 'email'])
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
 
 router.post('/signup', async (req, res) => {
   const {username, email, password} = req.body;
