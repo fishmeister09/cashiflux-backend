@@ -12,6 +12,9 @@ router.route('/request').post((req, res) => {
   const username = req.body.username;
   const title = req.body.title;
   const description = req.body.description;
+  const email = req.body.email;
+  const upi = req.body.upi;
+  const fundraised = Number(req.body.fundraised);
 
   const fundrequired = Number(req.body.fundrequired);
 
@@ -20,6 +23,9 @@ router.route('/request').post((req, res) => {
     title,
     description,
     fundrequired,
+    fundraised,
+    upi,
+    email,
   });
   newRequest.save();
   try {
