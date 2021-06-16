@@ -5,6 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./src/routes/authRoutes');
+const feedbackRoute = require('./src/routes/feedbackRoute');
 
 const requireAuth = require('./src/middlewares/requireAuth');
 const requestRouter = require('./src/routes/requestRoute');
@@ -14,6 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(authRoutes);
 app.use(requestRouter);
+app.use(feedbackRoute);
 const port = process.env.PORT || 5000;
 
 const mongoUri = process.env.ATLAS_URI;
