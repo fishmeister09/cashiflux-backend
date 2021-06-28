@@ -31,6 +31,7 @@ router.route('/request').post((req, res) => {
   const fundraised = Number(req.body.fundraised);
   const fundrequired = Number(req.body.fundrequired);
   const image = req.body.image;
+  const pplDonated = Number(req.body.pplDonated);
 
   const newRequest = new Request({
     username,
@@ -41,6 +42,7 @@ router.route('/request').post((req, res) => {
     upi,
     email,
     image,
+    pplDonated,
   });
   newRequest.save();
   try {
