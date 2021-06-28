@@ -12,6 +12,7 @@ router.route('/displayreq/:id').post((req, res) => {
   Request.findById(req.params.id)
     .then(request => {
       request.fundraised = Number(req.body.fundraised);
+      request.pplDonated = Number(req.body.pplDonated);
 
       request
         .save()
