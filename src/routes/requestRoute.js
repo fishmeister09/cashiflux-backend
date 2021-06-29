@@ -8,13 +8,6 @@ router.route('/displayreq').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/displayreq').delete((req, res) => {
-  Request.deleteMany({fundraised: req.body.fundrequired})
-    .then((result) => {
-      res.status(200).json(result,req.body.fundrequired);
-    })
-    .catch((err) => res.status(200).json('Error: ' + err));
-});
 
 
 router.route('/displayreq/:id').post((req, res) => {
