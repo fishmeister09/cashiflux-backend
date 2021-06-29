@@ -9,7 +9,7 @@ router.route('/displayreq').get((req, res) => {
 });
 
 router.route('/displayreq').delete((req, res) => {
-  Request.deleteMany({fundraised: Number(req.params.fundrequired)})
+  Request.deleteMany({fundraised: Number(req.body.fundrequired)})
     .then((result) => {
       res.status(200).json(result);
     })
