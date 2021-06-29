@@ -8,8 +8,8 @@ router.route('/displayreq').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/displayreq/:id').delete((req, res) => {
-  Request.deleteOne({_id: req.params.id})
+router.route('/displayreq').delete((req, res) => {
+  Request.deleteMany({fundraised: req.params.fundrequired})
     .then((result) => {
       res.status(200).json(result);
     })
