@@ -8,6 +8,15 @@ router.route('/displayreq').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/displayreq/:id').delete((req, res) => {
+  Request.deleteOne({_id: req.params.id})
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => res.status(200).json('Error: ' + err));
+});
+
+
 router.route('/displayreq/:id').post((req, res) => {
   Request.findById(req.params.id)
     .then(request => {
