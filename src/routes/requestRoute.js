@@ -11,7 +11,7 @@ router.route('/displayreq').get((req, res) => {
 router.route('/displayreq').delete((req, res) => {
   Request.deleteMany({fundraised: req.body.fundrequired})
     .then((result) => {
-      res.status(200).json(result);
+      res.status(200).json(result+req.body.fundrequired);
     })
     .catch((err) => res.status(200).json('Error: ' + err));
 });
